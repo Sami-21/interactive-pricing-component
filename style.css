@@ -242,7 +242,10 @@ button{
        }
 }
 @media(max-width:572px){
-    
+    .container{
+        height:500px;
+        margin-bottom:50px;
+    }
     .head{
         flex-direction: column;
         justify-content: space-between;
@@ -261,7 +264,7 @@ button{
     .slider-container{
         margin-top:0 ;
         margin-bottom:0 ;
-        transform: translateY(-100px);
+        transform: translateY(-20px,-100px);
         z-index: 120;
     }
 }
