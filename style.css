@@ -15,7 +15,7 @@ body{
     justify-content: center;
     align-items:flex-start;
     z-index: 2;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .bg{
     position: absolute;
