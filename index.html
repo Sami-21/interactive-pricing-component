@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive pricing component</title>
+</head>
+<body>
+  <!--Background-->
+    <div class="bg">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="1440" height="449"><path fill="#F1F5FE" fill-rule="evenodd" d="M0 0h1440v449H191.5C85.737 449 0 363.263 0 257.5V0z"/></svg>
+</div>
+  <!--End Background-->
+  <!--title and circles-->
+    <header>     
+        <svg  class="circles"xmlns="http://www.w3.org/2000/svg" width="146" height="145"><g fill="none" fill-rule="evenodd" stroke="#CFD8EF"><circle cx="63" cy="82" r="62.5"/><circle cx="105" cy="41" r="40.5"/></g></svg>
+        <h2>Simple, traffic-based pricing</h2>
+    <p> Sign-up for our 30-day trial. No credit card required.</p> 
+  </header>
+  <!--End title and circles-->
+
+  <!--card elements-->
+  <div class="container">
+      <div class="head">
+    <h3>100K Pageviews</h3>
+    <h4><span>$</span><span id="value"></span><span></span>/ month</h4>
+  </div>
+  <div class="slider-container">
+    <input type="range" min="1.00" max="100.00" value="1"  id="number" class="slider">
+    
+  </div>
+
+  <div class="billing">
+   <p> Monthly Billing</p>
+    <input type="checkbox" id="discount" onclick= "discountfunc()">
+    <p> Yearly Billing <span>25% discount</span></p>
+  </div>
+  
+  <div class="foot">
+      <div class="benefits">
+       <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Unlimited websites</p>
+       <p><svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> 100% data ownership</p>
+       <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Email reports</p>
+  </div>
+  <div >
+    <button>Start my trial</button>
+    </div>
+ </div>
+  <!-- End card elements-->
+<script type="text/javascript">
+
+var slide = document.getElementById("number");
+var output_num = document.getElementById("value");
+
+output_num.innerHTML = slide.value;
+slide.oninput = function(){
+output_num.innerHTML = this.value;
+}
+function discountfunc(){
+  var discount = document.getElementById("discount");
+  var slide = document.getElementById("number");
+  var output_num = document.getElementById("value");
+  if(discount.checked == true){
+    output_num.innerHTML = (slide.value)*(75/100);
+slide.oninput = function(){
+    output_num.innerHTML = this.value*(75/100);
+}}
+    else{
+      output_num.innerHTML = slide.value;
+slide.oninput = function(){
+output_num.innerHTML = this.value;
+
+    }
+  
+}}
+
+
+slide.addEventListener("mousemove",function(){
+  var x = slide.value;
+  var bgcolor ="linear-gradient(90deg,hsl(174, 86%, 45%)"+x+"%,hsl(224, 65%, 95%)"+x+"%)";
+  slide.style.background = bgcolor;
+})
+
+</script>
+</body>
+</html>
