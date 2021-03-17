@@ -113,7 +113,7 @@ box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     cursor: pointer;
     background:hsl(174, 86%, 45%) 60% ;
-    background-image: url(images/icon-slider.svg);
+    background-image: url(icon-slider.svg);
     background-repeat: no-repeat;
     background-position: center;
     transition: 0.5s;
