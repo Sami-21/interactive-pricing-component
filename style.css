@@ -264,7 +264,7 @@ button{
     .slider-container{
         margin-top:0 ;
         margin-bottom:0 ;
-        transform: translateY(-20px,-100px);
+        transform: translate(-20px,-100px);
         z-index: 120;
     }
 }
